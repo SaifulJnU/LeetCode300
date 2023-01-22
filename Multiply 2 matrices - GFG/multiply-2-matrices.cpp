@@ -12,11 +12,11 @@ public:
         
         vector<vector<int>>ans;
         
-        int n1 = matrixA.size();
-        int m1 = matrixA[0].size();
+        int n1 = matrixA[0].size();
+        int m1 = matrixA.size();
         
-        int n2 = matrixB.size();
-        int m2 = matrixB[0].size();
+        int n2 = matrixB[0].size();
+        int m2 = matrixB.size();
         
         //result (n1, m2)
         
