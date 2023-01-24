@@ -11,17 +11,26 @@ class Solution
   public:
     int findOnce(int arr[], int n)
     {
-        int ans = arr[0];
+        int ans=-1;
         
-        for(int i=1; i<n; i++)
+        int s=0;
+        int e=n-2;
+        
+        int mid;
+        
+        while(s<=e)
         {
-            ans^=arr[i];
+            mid = s+(e-s)/2;
             
-           // cout<<ans<<" ";
+            if(arr[mid] == arr[mid^1])
+            {
+                s=mid+1;
+            }
+            else e=mid-1;
+            
         }
         
-        
-        return ans;
+       return arr[s];
     }
 };
 
