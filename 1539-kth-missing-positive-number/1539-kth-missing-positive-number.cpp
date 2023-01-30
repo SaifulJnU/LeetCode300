@@ -13,12 +13,12 @@ public:
             
             int x= arr[mid]-mid; //it gives me kotota element missing ache
             
-            if(x>k)
+            if(x<=k)
             {
-                e=mid-1;
+                s=mid+1; //missing number kom hole barate hobe
             }
             else{
-                s=mid+1;
+                e=mid-1; //missing number beshi hole komate hobe
             }
         }
         return s+k;
