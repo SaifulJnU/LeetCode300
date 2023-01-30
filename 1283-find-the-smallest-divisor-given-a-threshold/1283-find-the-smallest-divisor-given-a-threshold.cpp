@@ -1,6 +1,6 @@
 class Solution {
 public:
-    
+    //base problem koko banana(binary search)
     bool isPossible(vector<int>& nums, int t, int mid)
     {
         long long sum=0;
