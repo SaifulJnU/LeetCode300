@@ -10,38 +10,41 @@ class Solution
     //Function to reverse words in a given string.
     string reverseWords(string S) 
     { 
-       string ans="";
-       stack<string>s;
-       S+='.';
-       for(int i=0; i<S.size(); i++)
-       {
-           if(S[i]=='.')
-           {
-               s.push(ans);
-               ans.clear();
-           }
-           else{
-               ans+=S[i];
-           }
-       }
-       
-       //cout<<s.size()<<endl;
-        string f;
-        int i=0;
-        int n=s.size();
-        while(!s.empty())
-       {
-           ++i;
-          f+=s.top();
-          //cout<<s.top()<<" ";
-          if(i!=n)
-          {
-              f+='.';
-          }
-          
-          s.pop();
-       }
-       return f;
+    //   string ans="";
+    //   stack<string>s;
+    //   S+='.';
+    //   for(int i=0; i<S.size(); i++)
+    //   {
+    //       if(S[i]=='.')
+    //       {
+    //           s.push(ans);
+    //           ans.clear();
+    //       }
+    //       else{
+    //           ans+=S[i];
+    //       }
+    //   }
+    
+        for(int i=0; i<S.size()-1; i++)
+        {
+            if(S[i]=='.')S[i]=' ';
+        }
+    
+        stringstream ss(S);
+        string word;
+        
+        stack<string> st;
+        while(ss >> word) {
+            st.push(word);
+        }
+        
+        string ans = "";
+        while(!st.empty()) {
+            ans += st.top() + ".";
+            st.pop();
+        }
+        ans.pop_back();
+       return ans;
     } 
 };
 
