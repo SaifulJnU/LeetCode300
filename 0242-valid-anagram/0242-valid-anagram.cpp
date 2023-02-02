@@ -13,12 +13,12 @@ public:
         //O(n) solution
         if(s.size()!=t.size())return false;
         
-        int cnt[256]={0};
+        int cnt[26]={0};
         
         for(int i=0; i<s.size(); i++)
         {
-            cnt[s[i]]++;
-            cnt[t[i]]--;
+            cnt[s[i]-'a']++;
+            cnt[t[i]-'a']--;
         }
         
         for(int x: cnt)
