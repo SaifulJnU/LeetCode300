@@ -8,7 +8,7 @@ public:
             {
                 return num;
             }
-            else num.pop_back();    
+            else num.erase(i,1);    
         }
         return num;
     }
