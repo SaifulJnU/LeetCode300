@@ -13,8 +13,9 @@ public:
                 return false;
             }
             
-            mp1.insert({s[i],t[i]});
-            mp2.insert({t[i],s[i]});
+           // mp1.insert({s[i],t[i]});
+           // mp2.insert({t[i],s[i]});
+             mp1[s[i]] = t[i];mp2[t[i]] = s[i];
 
         }
         
