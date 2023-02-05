@@ -2,8 +2,8 @@ class Solution {
 public:
     bool isIsomorphic(string s, string t) {
         
-        unordered_map<char, char> mp1;
-        unordered_map<char, char> mp2;
+        unordered_map<char, char> mp1, mp2;
+       
         
         
         for(int i=0; i< s.size(); i++)
@@ -13,9 +13,10 @@ public:
                 return false;
             }
             
-           // mp1.insert({s[i],t[i]});
+           // mp1.insert({s[i],t[i]}); //insert value this is okay but time consuming
            // mp2.insert({t[i],s[i]});
-             mp1[s[i]] = t[i];mp2[t[i]] = s[i];
+             mp1[s[i]] = t[i];  //we also can insert this way
+             mp2[t[i]] = s[i];
 
         }
         
