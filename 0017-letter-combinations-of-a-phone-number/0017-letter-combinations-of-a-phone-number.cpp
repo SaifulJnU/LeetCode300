@@ -5,15 +5,15 @@ public:
         if(digits=="")  //corner case
             return;
         
-        if(idx == digits.size()) //if it will reach the leaf of recursive tree
+        if(idx == digits.size()) //if it will reach the leaf of the recursive tree
         {   
             ans.push_back(ds);
             return;
         }
         
-        int d = digits[idx] - '0';  //extract single digit from given string
+        int d = digits[idx] - '0';  //extract a single digit from the given string
         
-        string s = smap[d];  //extract conrrspoding string mapped to this digit
+        string s = smap[d];  //extract conrrespoding string that mapped to this digit
         
         for(int i=0; i<s.size(); i++)  //for every sigle character
         {
@@ -33,7 +33,7 @@ public:
         
         string ds;
         
-        string smap[10] = { //mapping all digit to its containing character
+        string smap[10] = { //mapping all digits to its containing character
             "",
             "",
             "abc",
