@@ -14,8 +14,10 @@ public:
         
       for(int i=0; i<s; i++)
         {
-            q.push(q.front());
+            int y = q. front();
+           // q.push(q.front());
             q.pop();
+            q.push(y);
         }
     }
     
