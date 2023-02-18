@@ -20,15 +20,17 @@ public:
                 minStack.push(val);
 
             }
+            else
+            {
+                minStack.push(minStack.top());
+            }
         }
     }
     
     void pop() {
         
-        if(st.top()==minStack.top())
-        {
+        
          minStack.pop();
-        }
         st.pop();
     }
     
