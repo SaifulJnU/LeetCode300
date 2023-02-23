@@ -13,14 +13,23 @@ class Solution {
 public:
     void PreOrder(TreeNode* root, vector<int>&v)
     {
-        if(root==NULL)
+       //iterative
+        
+        if(root==NULL)return;
+        
+        stack<TreeNode*>st;
+        st.push(root);
+        
+        while(!st.empty())
         {
-            return;
+            TreeNode* node = root;
+            node = st.top();
+            st.pop();
+            
+            v.push_back(node->val);
+            if(node->right != NULL) st.push(node->right);
+            if(node->left != NULL) st.push(node->left);
         }
-        //Root, Left, Right
-        v.push_back(root->val);
-        PreOrder(root->left, v);
-        PreOrder(root->right, v);
         
     }
     
