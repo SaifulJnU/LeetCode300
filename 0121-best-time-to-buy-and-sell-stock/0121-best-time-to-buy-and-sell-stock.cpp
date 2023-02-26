@@ -10,7 +10,7 @@ public:
             if(prices[i]<prices[low])
             {
                 low = i;
-                continue;
+               // continue;
             }
 
             maxProf = max(maxProf, prices[i]-prices[low]);
