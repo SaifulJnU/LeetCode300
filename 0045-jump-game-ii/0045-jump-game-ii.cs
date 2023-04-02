@@ -7,7 +7,9 @@ public class Solution {
         
         int mini = n;  //int.MaxValue dile jame ace overflow asbe
         
-        for(int i=ind+1; i<=ind+nums[ind]; i++)
+        int reachable = ind+nums[ind];
+        
+        for(int i=ind+1; i<=reachable; i++)
         {
             mini = Math.Min(mini, 1+solve(i, nums, dp, n));
         }
