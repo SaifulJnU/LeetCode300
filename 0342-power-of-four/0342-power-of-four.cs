@@ -1,23 +1,20 @@
 public class Solution {
-    
-    bool solve(long ans, long n)
-    {
-        if(ans==n) {
-            return true;
-        }
-        if(ans>n) {
-            return false;
-        }
-        
-        bool ok = solve(ans*4, n);
-        
-        return ok;
+ 
+    public bool IsPowerOfFour(int n) {
+       
+    if (n <= 0) {
+        return false;
     }
     
-    public bool IsPowerOfFour(int n) {
-        if(n<=0 || n == int.MaxValue) {
+    while (n >= 64) {
+        if (n % 64 != 0) {
             return false;
         }
-        return solve(1, n);
+        n /= 64;
+    }
+    
+    return n == 1 || n == 4 || n == 16 || n == 64;
+
+
     }
 }
