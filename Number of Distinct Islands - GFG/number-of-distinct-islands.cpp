@@ -32,28 +32,31 @@ class Solution {
 }
 
     int countDistinctIslands(vector<vector<int>>& grid) {
-    int n = grid.size();
-    int m = grid[0].size();
-    vector<vector<int>>vis(n, vector<int>(m, 0));
-    set<vector<pair<int,int>>>st;
-    
-    for(int i=0; i<n; i++)
-    {
-        for(int j=0; j<m; j++)
+        
+        int n = grid.size();
+        int m = grid[0].size();
+        
+        vector<vector<int>>vis(n, vector<int>(m, 0));
+        
+        set<vector<pair<int,int>>>st;
+        
+        for(int i=0; i<n; i++)
         {
-            vector<pair<int,int>>vec;
-            if(!vis[i][j] && grid[i][j] == 1)
+            for(int j=0; j<m; j++)
             {
-                dfs(i, j, vis, vec, grid, i, j);
-                //sort(vec.begin(), vec.end()); // sort the vector before adding it to the set
-                st.insert(vec);
+              
+                if(!vis[i][j] and grid[i][j]==1)
+                {  vector<pair<int,int>>vec;
+                
+                    dfs(i,j,vis,vec, grid, i,j);
+                    st.insert(vec);
+                }
+               
             }
         }
+        
+        return st.size();
     }
-    
-    return st.size();
-}
-
 };
 
 
