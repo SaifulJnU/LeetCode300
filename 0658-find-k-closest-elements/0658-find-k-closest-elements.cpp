@@ -4,24 +4,20 @@ public:
         
         vector<int> ans;
         
-        priority_queue<pair<int,int>>maxHeap;
-        
-        for(int i=0; i<arr.size(); i++)
+        //two pointer approach
+        int low = 0;
+        int high = arr.size()-1;
+        while(high - low >= k)
         {
-            maxHeap.push({abs(arr[i]-x), arr[i]});
-            if(maxHeap.size()>k)
-            {
-                maxHeap.pop();
-            }
+            if(abs(arr[low]-x)> abs(arr[high]-x))
+                low++;
+            else high--;
+        }
+        for(int i=low; i<=high; i++)
+        {
+            ans.push_back(arr[i]);
         }
         
-        while(!maxHeap.empty())
-        {
-            ans.push_back(maxHeap.top().second);
-            maxHeap.pop();
-        }
-        
-        sort(ans.begin(), ans.end());
         return ans;
     }
 };
