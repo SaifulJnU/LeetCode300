@@ -10,17 +10,17 @@ public:
             int sum = carry;
             if(s1>=0)
             {
-                sum += stoi(string(1, a[s1]));
+                sum += a[s1] - '0';  //char to integer
                 s1--;
             }
             if(s2>=0)
             {
-                sum += stoi(string(1, b[s2]));
+                sum += b[s2] - '0';
                 s2--;
             }
             carry = sum/2;
             int r = sum%2;
-            string t = to_string(r);
+            char t = r + '0';  //integer to char
             ans = t + ans;
         }
         return ans;
