@@ -13,10 +13,14 @@ public:
         {
             int left = i, right = i;
             
-            while(left>=0 and right<n and s[left]==s[right])
+            while(left>=0 and right<n )
             {
-                left--;
+                if(s[left]==s[right]){
+                    left--;
                 right++;
+                }
+                else break;
+                
             }
             
             int len = right-left-1;
@@ -33,10 +37,13 @@ public:
         {
             int left = i, right = i+1;
             
-            while(left>=0 and right<n and s[left]==s[right])
+            while(left>=0 and right<n )
             {
-                left--;
-                right++;
+                if(s[left]==s[right]){
+                    left--;
+                    right++;
+                }
+                else break;
             }
             
             int len = right-left-1;
