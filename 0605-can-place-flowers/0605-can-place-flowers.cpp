@@ -1,21 +1,19 @@
 class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
-        int count=0;
-        for(int i=0; i<flowerbed.size(); i++){
-            bool prevEmpty = (i==0 || flowerbed[i-1]==0); //starting boundary check and prev place check
-            bool nextEmpty = (i==flowerbed.size()-1 || flowerbed[i+1]==0);//ending boundary check and next place check
+        int count = 0; // Counter for flowers placed
+        for (int i = 0; i < flowerbed.size(); i++) {
+            if (flowerbed[i] == 0) {
+                bool emptyLeft = (i == 0 || flowerbed[i - 1] == 0); // No left neighbor or left neighbor is empty
+                bool emptyRight = (i == flowerbed.size() - 1 || flowerbed[i + 1] == 0); // No right neighbor or right neighbor is empty
                 
-            //check current plot is empty before plant
-                if (flowerbed[i] == 0 && prevEmpty && nextEmpty) {
-                    flowerbed[i]=1;
-                    count++;
-                    if(count>=n){
-                        return true;
-                    }
+                if (emptyLeft && emptyRight) {
+                    flowerbed[i] = 1; // Place a flower
+                    count++; // Increment the count
+                    i++; // Skip the next spot to avoid adjacent placement
                 }
+            }
         }
-        
-        return count>=n;
+        return count >= n; // Return true if enough flowers can be placed
     }
 };
